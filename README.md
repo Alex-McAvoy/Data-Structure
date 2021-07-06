@@ -1,6 +1,5 @@
-# data-structure
 
-数据结构实现，学习笔记见下述连接
+常见数据结构的实现，学习笔记见下述连接
 
 1. [数据结构概述](https://alex-mcavoy.github.io/notes/data-structure/35ca0ba5.html)
 2. [线性表](https://alex-mcavoy.github.io/notes/data-structure/40f24371.html) </br>
