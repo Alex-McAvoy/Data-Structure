@@ -1,9 +1,7 @@
+#include <iostream>
 #include <cstdio>
 #include <cstdlib>
-#include <iostream>
 using namespace std;
-
-
 
 #define N 50 + 5 //最大表长
 template <typename T> class SeqList {
