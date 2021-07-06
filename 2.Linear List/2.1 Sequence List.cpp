@@ -4,7 +4,8 @@
 using namespace std;
 
 #define N 50 + 5 //最大表长
-template <typename T> class SeqList {
+template <typename T> 
+class SeqList {
   public:
     SeqList();                              //无参构造函数，初始化表
     SeqList(T m_data[], int m_len);         //有参构造函数，对表赋初值
@@ -23,7 +24,8 @@ template <typename T> class SeqList {
     int len;    //当前表长
     int maxLen; //最大表长
 };
-template <typename T> SeqList<T>::SeqList() { //无参构造函数，初始化表
+template <typename T> 
+SeqList<T>::SeqList() { //无参构造函数，初始化表
     len = 0;                                  //初始长度为0，空表
     maxLen = N;                               //最大表长为N
 
@@ -32,12 +34,13 @@ template <typename T> SeqList<T>::SeqList() { //无参构造函数，初始化�
     // 使用new开辟空间
     // data = new int(maxLen);
 }
-template <typename T>
+template <typename T> 
 SeqList<T>::SeqList(T m_data[], int m_len) { //有参构造函数，对表赋初值
     data = m_data;
     len = m_len;
 }
-template <typename T> SeqList<T>::~SeqList() { //析构函数，销毁表
+template <typename T> 
+SeqList<T>::~SeqList() { //析构函数，销毁表
     free(data); // 使用free回收malloc分配的空间
     // delete data; // 使用delete回收new分配的空间
 }
@@ -55,20 +58,24 @@ void SeqList<T>::increaseList(int increaseLen) { //扩充线性表长度
     //使用realloc重新分配空间
     // data = (T *)realloc(data, maxLen * sizeof(T));
 }
-template <typename T> int SeqList<T>::getLen() { //求表长
+template <typename T> 
+int SeqList<T>::getLen() { //求表长
     return len;
 }
-template <typename T> bool SeqList<T>::empty() { //判空
+template <typename T> 
+bool SeqList<T>::empty() { //判空
     if (len == 0)
         return true;
     return false;
 }
-template <typename T> bool SeqList<T>::full() { //判满
+template <typename T> 
+bool SeqList<T>::full() { //判满
     if (len == maxLen)
         return true;
     return false;
 }
-template <typename T> bool SeqList<T>::print() { //输出
+template <typename T> 
+bool SeqList<T>::print() { //输出
     if (empty())                                 //判空
         return false;
 
@@ -78,7 +85,7 @@ template <typename T> bool SeqList<T>::print() { //输出
     cout << data[len - 1] << endl;
     return true;
 }
-template <typename T>
+template <typename T> 
 bool SeqList<T>::insertElement(int pos, T elem) { //第pos个位置插入元素elem
     if (pos < 1 || pos > len + 1)                 //越界判断
         return false;
