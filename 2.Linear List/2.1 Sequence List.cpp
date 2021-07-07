@@ -8,7 +8,7 @@ template <typename T>
 class SeqList {
   public:
     SeqList();                              //无参构造函数，初始化表
-    SeqList(T m_data[], int m_len);         //有参构造函数，对表赋初值
+    SeqList(T data[], int len);         //有参构造函数，对表赋初值
     ~SeqList();                             //析构函数，销毁表
     void increaseList(int increaseLen);     //扩充线性表长度
     int getLen();                           //求表长
