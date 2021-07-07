@@ -35,14 +35,17 @@ SeqList<T>::SeqList() { //无参构造函数，初始化表
     // data = new int(maxLen);
 }
 template <typename T> 
-SeqList<T>::SeqList(T m_data[], int m_len) { //有参构造函数，对表赋初值
-    data = m_data;
-    len = m_len;
+SeqList<T>::SeqList(T data[], int len) { //有参构造函数，对表赋初值
+    maxLen = N;                          //最大表长为N
+    this->len = len;
+    this->data = (T *)malloc(maxLen * sizeof(T)); //申请连续的maxLen个存储单元
+    for (int i = 0; i < len; i++)
+        this->data[i] = data[i];
 }
 template <typename T> 
 SeqList<T>::~SeqList() { //析构函数，销毁表
-    free(data); // 使用free回收malloc分配的空间
-    // delete data; // 使用delete回收new分配的空间
+    free(data);          // 使用free回收malloc分配的空间
+    // delete data;      // 使用delete回收new分配的空间
 }
 template <typename T>
 void SeqList<T>::increaseList(int increaseLen) { //扩充线性表长度
@@ -53,7 +56,7 @@ void SeqList<T>::increaseList(int increaseLen) { //扩充线性表长度
     data = (T *)malloc(maxLen * sizeof(T));     //重新开辟空间
     for (int i = 0; i < len; i++)               //将原有数据复制到新开辟空间
         data[i] = p[i];
-    free(p); //释放原空间
+    free(p);                                    //释放原空间
 
     //使用realloc重新分配空间
     // data = (T *)realloc(data, maxLen * sizeof(T));
@@ -76,7 +79,7 @@ bool SeqList<T>::full() { //判满
 }
 template <typename T> 
 bool SeqList<T>::print() { //输出
-    if (empty())                                 //判空
+    if (empty())           //判空
         return false;
 
     int len = getLen(); //表长
