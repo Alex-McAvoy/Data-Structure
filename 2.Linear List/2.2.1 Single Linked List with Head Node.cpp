@@ -77,7 +77,7 @@ void LinkList<T>::print() {     //输出
 }
 template <typename T>
 LNode<T> *LinkList<T>::getNodeByValue(T elem) { //按值查找
-    LNode<T> *p = first->next;                  //从头指针开始
+    LNode<T> *p = first->next;                  //从头结点开始
     while (p != NULL && p->data != elem)
         p = p->next;
     return p;
