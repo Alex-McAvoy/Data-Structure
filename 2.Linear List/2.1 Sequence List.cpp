@@ -8,7 +8,7 @@ template <typename T>
 class SeqList {
   public:
     SeqList();                              //无参构造函数，初始化表
-    SeqList(T data[], int len);         //有参构造函数，对表赋初值
+    SeqList(T data[], int len);             //有参构造函数，对表赋初值
     ~SeqList();                             //析构函数，销毁表
     void increaseList(int increaseLen);     //扩充线性表长度
     int getLen();                           //求表长
@@ -18,7 +18,7 @@ class SeqList {
     bool insertElement(int pos, T elem);    //第pos个位置插入元素elem
     bool deleteElement(int pos, T &elem);   //删除第pos个元素，通过引用返回元素值
     int getNodeByValue(T elem);             //查找与elem相同的第一个元素位置，不存在返回-1
-    bool getNodeByLocate(int pos, T &elem); //查找第pos个元素，通过引用返回元素值
+    bool getNodeByPosition(int pos, T &elem); //查找第pos个元素，通过引用返回元素值
   private:
     T *data;
     int len;    //当前表长
@@ -130,7 +130,7 @@ int SeqList<T>::getNodeByValue(T elem) { //查找与elem相同的第一个元素
     return -1;
 }
 template <typename T>
-bool SeqList<T>::getNodeByLocate(int pos, T &elem) { //查找第pos个元素，通过引用返回元素值
+bool SeqList<T>::getNodeByPosition(int pos, T &elem) { //查找第pos个元素，通过引用返回元素值
     if (pos < 1 || pos > len)                        //越界判断
         return false;
     if (empty())                                     //判空
@@ -153,7 +153,7 @@ int main() {
     cout << elem << endl;
     seq_list.print();
   
-    seq_list.getNodeByLocate(5, elem);
+    seq_list.getNodeByPosition(5, elem);
     cout << elem << endl;
 
     int pos = seq_list.getNodeByValue(2);
