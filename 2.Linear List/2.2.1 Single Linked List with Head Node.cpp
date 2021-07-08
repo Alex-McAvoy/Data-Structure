@@ -187,7 +187,7 @@ bool LinkList<T>::deleteNodeByElem(T elem) { //删除所有值为elem的结点
         if (p->data == elem) { //值相同
             LNode<T> *s = p;   //暂存工作指针p所指向的结点
             p = p->next;       //工作指针p指向下一结点
-            pre->next = p;     // p的前驱结点指向p
+            pre->next = p;     //p的前驱结点指向p
             free(s);           //释放要删除的结点
         } else {               //值不同
             pre = p;           //前驱指针pre后移
@@ -233,7 +233,7 @@ int main() {
     link_list.insertNode(2, 2);
     link_list.print();
 
-    link_list.deleteNodeByElem(2);
+    link_list.deleteNodeByElem(4);
     link_list.print();
 
     system("pause");
