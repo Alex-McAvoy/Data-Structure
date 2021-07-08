@@ -150,6 +150,16 @@ template <typename T>
 bool LinkList<T>::deleteNodeByLocate(LNode<T> *p, T &elem) { //删除指定结点p
     if (p == NULL)
         return false;
+    
+    //删除非最后一个结点
+    if (p->next != NULL) {
+        LNode<T> *s = p->next; //指向结点p的下一结点s
+        elem = p->data;        //记录数据域，通过引用的方式返回
+        p->data = s->data;     //将结点p的下一结点s中的数据存到结点p中
+        p->next = s->next;     //断开结点p与其下一结点s的链接关系
+        free(s);               //释放p的下一结点的空间
+        return true;
+    }
 
     //删除最后一个结点
     if (p->next == NULL) {
@@ -165,15 +175,6 @@ bool LinkList<T>::deleteNodeByLocate(LNode<T> *p, T &elem) { //删除指定结�
             s = s->next;
         }
     }
-
-    //删除非最后一个结点
-    LNode<T> *s = p->next; //指向结点p的下一结点s
-    elem = p->data;        //记录数据域，通过引用的方式返回
-    p->data = s->data;     //将结点p的下一结点s中的数据存到结点p中
-    p->next = s->next;     //断开结点p与其下一结点s的链接关系
-    free(s);               //释放p的下一结点的空间
-
-    return true;
 }
 template <typename T>
 bool LinkList<T>::deleteNodeByElem(T elem) { //删除所有值为elem的结点
