@@ -39,8 +39,8 @@ LinkList<T>::LinkList(T data[], int len) {        //有参构造函数，链表�
     first = (LNode<T> *)malloc(sizeof(LNode<T>)); //分配一头结点
     first->next = NULL;                           //空表
 
-    this->headInsert(data, len);    //头插法
-    // this->tailInsert(data, len); //尾插法
+    this->headInsert(data, len);                  //头插法
+    // this->tailInsert(data, len);               //尾插法
 }
 template <typename T> 
 LinkList<T>::~LinkList() {   //析构函数，链表销毁
@@ -126,6 +126,7 @@ bool LinkList<T>::insertPreNode(LNode<T> *p, T elem) { //前插，用于按位�
     //交换数据
     s->data = p->data; //将p结点的数据存入s结点
     p->data = elem;    //将元素elem存入p结点
+    
     return true;
 }
 template <typename T> 
