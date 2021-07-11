@@ -47,9 +47,9 @@ DoubleLinkList<T>::DoubleLinkList(T data[], int len) { //有参构造函数，�
 template <typename T>
 DoubleLinkList<T>::~DoubleLinkList() { //析构函数，链表销毁
     while (first != NULL) {
-        DNode<T> *p = first; //暂存要被释放的结点
-        first = first->next; //头指针指向要被释放的结点的下一个结点
-        free(p);             //释放空间
+        DNode<T> *p = first;          //暂存要被释放的结点
+        first = first->next;          //头指针指向要被释放的结点的下一个结点
+        free(p);                      //释放空间
     }
 }
 template <typename T> 
