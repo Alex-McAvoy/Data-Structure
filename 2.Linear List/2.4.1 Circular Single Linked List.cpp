@@ -8,6 +8,7 @@ struct CNode {       //循环单链表结点
     T data;          //数据域
     CNode<T> *next;  //指针域
 };
+
 template <typename T> 
 class CirSingleLinkList {
   public:
