@@ -9,11 +9,11 @@ struct CNode {       //循环单链表结点
     CNode<T> *next;  //指针域
 };
 template <typename T> 
-class CircularLinkedList {
+class CirSingleLinkList {
   public:
-    CircularLinkedList();                          //无参构造函数，初始化表
-    CircularLinkedList(T data[], int len);         //有参构造函数，链表建立
-    ~CircularLinkedList();                         //析构函数，链表销毁
+    CirSingleLinkList();                           //无参构造函数，初始化表
+    CirSingleLinkList(T data[], int len);          //有参构造函数，链表建立
+    ~CirSingleLinkList();                          //析构函数，链表销毁
     int getLen();                                  //求表长
     bool empty();                                  //判空
     void print();                                  //输出
@@ -29,12 +29,12 @@ class CircularLinkedList {
     CNode<T> *first;                               //头指针
 };
 template <typename T> 
-CircularLinkedList<T>::CircularLinkedList() {     //无参构造函数，初始化
+CirSingleLinkList<T>::CirSingleLinkList() {       //无参构造函数，初始化
     first = (CNode<T> *)malloc(sizeof(CNode<T>)); //分配一头结点
     first->next = first;                          //空表
 }
 template <typename T>
-CircularLinkedList<T>::CircularLinkedList(T data[], int len) { //有参构造函数，链表建立
+CirSingleLinkList<T>::CirSingleLinkList(T data[], int len) { //有参构造函数，链表建立
     first = (CNode<T> *)malloc(sizeof(CNode<T>)); //分配一头结点
     first->next = first;                          //空表
 
@@ -42,7 +42,7 @@ CircularLinkedList<T>::CircularLinkedList(T data[], int len) { //有参构造函
     // this->tailInsert(data, len);               //尾插法
 }
 template <typename T> 
-CircularLinkedList<T>::~CircularLinkedList() { //析构函数，链表销毁
+CirSingleLinkList<T>::~CirSingleLinkList() { //析构函数，链表销毁
     while (first != NULL) {
         CNode<T> *p = first; //暂存要被释放的结点
         first = first->next; //头指针指向要被释放的结点的下一个结点
@@ -50,9 +50,9 @@ CircularLinkedList<T>::~CircularLinkedList() { //析构函数，链表销毁
     }
 }
 template <typename T> 
-int CircularLinkedList<T>::getLen() {   //求表长
+int CirSingleLinkList<T>::getLen() { //求表长
     int len = 0;
-    CNode<T> *p = first;       //为保证头指针指向不变，建立临时指针变量进行枚举
+    CNode<T> *p = first;
     while (p->next != first) { //判断下一结点是否为头结点
         p = p->next;
         len++;
@@ -60,14 +60,14 @@ int CircularLinkedList<T>::getLen() {   //求表长
     return len;
 }
 template <typename T> 
-bool CircularLinkedList<T>::empty() { //判空
+bool CirSingleLinkList<T>::empty() { //判空
     if (first->next == first)
         return true;
     return false;
 }
 template <typename T> 
-void CircularLinkedList<T>::print() { //输出
-    CNode<T> *p = first->next;        //指向第1个结点
+void CirSingleLinkList<T>::print() { //输出
+    CNode<T> *p = first->next;      //指向第1个结点
     while (p != first) {
         cout << p->data << " ";
         p = p->next;
@@ -75,14 +75,14 @@ void CircularLinkedList<T>::print() { //输出
     cout << endl;
 }
 template <typename T>
-CNode<T> *CircularLinkedList<T>::getNodeByValue(T elem) { //按值查找
-    CNode<T> *p = first->next;                            //从头结点开始
+CNode<T> *CirSingleLinkList<T>::getNodeByValue(T elem) { //按值查找
+    CNode<T> *p = first->next; //从头结点开始
     while (p != first && p->data != elem)
         p = p->next;
     return p;
 }
 template <typename T>
-CNode<T> *CircularLinkedList<T>::getNodeByLocate(int pos) { //按位查找
+CNode<T> *CirSingleLinkList<T>::getNodeByLocate(int pos) { //按位查找
     if (pos < 0)     //越界判断
         return NULL;
     if (pos == 0)    //返回头结点
@@ -99,7 +99,7 @@ CNode<T> *CircularLinkedList<T>::getNodeByLocate(int pos) { //按位查找
     return p;
 }
 template <typename T>
-bool CircularLinkedList<T>::insertNextNode(CNode<T> *p, T elem) { //后插，用于按位插入
+bool CirSingleLinkList<T>::insertNextNode(CNode<T> *p, T elem) { //后插，用于按位插入
     if (p == NULL)
         return false;
 
@@ -112,7 +112,7 @@ bool CircularLinkedList<T>::insertNextNode(CNode<T> *p, T elem) { //后插，用
     return true;
 }
 template <typename T>
-bool CircularLinkedList<T>::insertPreNode(CNode<T> *p, T elem) { //前插，用于按位插入
+bool CirSingleLinkList<T>::insertPreNode(CNode<T> *p, T elem) { //前插，用于按位插入
     if (p == NULL)
         return false;
 
@@ -129,15 +129,15 @@ bool CircularLinkedList<T>::insertPreNode(CNode<T> *p, T elem) { //前插，用�
     return true;
 }
 template <typename T> 
-bool CircularLinkedList<T>::insertNode(int pos, T elem) { //按位插入
-    if (pos < 1)                                          //越界判断
+bool CirSingleLinkList<T>::insertNode(int pos, T elem) { //按位插入
+    if (pos < 1)                                         //越界判断
         return false;
 
     //后插
-    CNode<T> *p = getNodeByLocate(pos - 1);               //找到第pos-1个位置
-    if (p == NULL)                                        //插入位置异常
+    CNode<T> *p = getNodeByLocate(pos - 1);              //找到第pos-1个位置
+    if (p == NULL)                                       //插入位置异常
         return false;
-    return insertNextNode(p, elem);                       //在pos-1个位置后插入元素
+    return insertNextNode(p, elem);                      //在pos-1个位置后插入元素
 
     //前插
     // CNode<T> *p = getNodeByLocate(pos);               //找到第pos个位置
@@ -146,7 +146,7 @@ bool CircularLinkedList<T>::insertNode(int pos, T elem) { //按位插入
     // return insertPreNode(p, elem);                    //在pos个位置前插入元素
 }
 template <typename T>
-bool CircularLinkedList<T>::deleteNodeByLocate(CNode<T> *p, T &elem) { //删除指定结点p
+bool CirSingleLinkList<T>::deleteNodeByLocate(CNode<T> *p, T &elem) { //删除指定结点p
     if (p == NULL)
         return false;
     
@@ -158,12 +158,12 @@ bool CircularLinkedList<T>::deleteNodeByLocate(CNode<T> *p, T &elem) { //删除�
     return true;
 }
 template <typename T> 
-void CircularLinkedList<T>::headInsert(T data[], int len) { //头插法
-    for (int i = 0; i < len; i++) //每一次对头结点进行后插操作
+void CirSingleLinkList<T>::headInsert(T data[], int len) { //头插法
+    for (int i = 0; i < len; i++)                          //每一次对头结点进行后插操作
         insertNextNode(first, data[i]);
 }
 template <typename T> 
-void CircularLinkedList<T>::tailInsert(T data[], int len) { //尾插法
+void CirSingleLinkList<T>::tailInsert(T data[], int len) {  //尾插法
     CNode<T> *tail = first;                                 //尾指针
     for (int i = 0; i < len; i++) {
         CNode<T> *p = (CNode<T> *)malloc(sizeof(CNode<T>)); //申请新结点
@@ -177,7 +177,7 @@ void CircularLinkedList<T>::tailInsert(T data[], int len) { //尾插法
 
 int main() {
     int a[5] = {1, 2, 3, 4, 5};
-    CircularLinkedList<int> link_list(a, 5);
+    CirSingleLinkList<int> link_list(a, 5);
     link_list.print();
 
     CNode<int> *p = link_list.getNodeByLocate(1);
