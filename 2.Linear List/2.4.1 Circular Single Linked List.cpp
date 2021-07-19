@@ -44,6 +44,15 @@ CirSingleLinkList<T>::CirSingleLinkList(T data[], int len) { //有参构造函�
 }
 template <typename T> 
 CirSingleLinkList<T>::~CirSingleLinkList() { //析构函数，链表销毁
+    CNode<T> *p = first;
+    while (p->next != first) { //遍历循环单链表
+        p = p->next;
+        if (p->next = first) { //寻找尾结点
+            p->next = NULL;    //断开与头结点的链接
+            break;
+        }
+    }
+
     while (first != NULL) {
         CNode<T> *p = first; //暂存要被释放的结点
         first = first->next; //头指针指向要被释放的结点的下一个结点
@@ -90,7 +99,7 @@ CNode<T> *CirSingleLinkList<T>::getNodeByLocate(int pos) { //按位查找
         return first;
 
     CNode<T> *p;     //扫描器，当前扫描到的工作结点
-    p = first->next; //扫描器从头结点开始，头结点是第0个结点
+    p = first->next; //扫描器从头结点的下一结点开始
     int now_pos = 1; //累加器，记录p指向的第几个结点
 
     while (p != first && now_pos < pos) { //查找第pos个结点
