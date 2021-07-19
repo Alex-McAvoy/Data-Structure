@@ -5,7 +5,7 @@ using namespace std;
 
 template <typename T> 
 struct CDNode {       //双链表结点
-    T data;          //数据域
+    T data;           //数据域
     CDNode<T> *prior; //前驱指针
     CDNode<T> *next;  //后继指针
 };
