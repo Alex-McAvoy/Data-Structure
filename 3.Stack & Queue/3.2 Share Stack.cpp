@@ -94,6 +94,7 @@ void ShStack<T>::print(int i) { //输出
 
 int main() {
     ShStack<int> sh_stack;
+  
     sh_stack.push(1,1);
     sh_stack.push(1,2);
     sh_stack.push(1,3);
