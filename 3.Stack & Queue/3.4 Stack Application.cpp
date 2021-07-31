@@ -1,3 +1,12 @@
+#include<iostream>
+#include<cstdio>
+#include<cmath>
+#include<cstring>
+#include<algorithm>
+#include<stack>
+#define N 1000 + 5
+using namespace std;
+
 void parenthesisMatch() { //括号匹配
     char str[N];
     stack<char> S;
