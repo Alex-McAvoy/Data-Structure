@@ -4,8 +4,8 @@
 #include<cstring>
 #include<algorithm>
 #include<stack>
-#define N 1000 + 5
 using namespace std;
+#define N 1000 + 5
 
 void parenthesisMatch() { //括号匹配
     char str[N];
