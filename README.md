@@ -24,7 +24,7 @@
     6.2 [BP 算法](https://alex-mcavoy.github.io/notes/data-structure/8ad51007.html)</br>
     6.3 [MP 算法](https://alex-mcavoy.github.io/notes/data-structure/556cdfd6.html)</br>
     6.4 [KMP 算法](https://alex-mcavoy.github.io/notes/data-structure/36b55f59.html)</br>
-7. 树与二叉树
+7. 树与二叉树</br>
     7.1 [树的基本概念](https://alex-mcavoy.github.io/notes/data-structure/dd979b5f.html)</br>
     7.2 [树的存储结构](https://alex-mcavoy.github.io/notes/data-structure/26449a4c.html)</br>
     7.3 [二叉树的基本概念](https://alex-mcavoy.github.io/notes/data-structure/255e2a53.html)</br>
