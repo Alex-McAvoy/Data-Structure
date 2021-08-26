@@ -2,7 +2,7 @@
 
 常见数据结构的实现，学习笔记见下述连接
 
-1. [数据结构概述](https://alex-mcavoy.github.io/notes/data-structure/35ca0ba5.html)
+1. [数据结构概述](https://alex-mcavoy.github.io/notes/data-structure/35ca0ba5.html)</br>
 2. [线性表](https://alex-mcavoy.github.io/notes/data-structure/40f24371.html) </br>
     2.1 [顺序表](https://alex-mcavoy.github.io/notes/data-structure/f35acf61.html) </br>
     2.2 [单链表](https://alex-mcavoy.github.io/notes/data-structure/71c610d3.html) </br>
@@ -18,7 +18,7 @@
     4.1 [顺序队列](https://alex-mcavoy.github.io/notes/data-structure/4901c438.html)</br>
     4.2 [循环队列](https://alex-mcavoy.github.io/notes/data-structure/b66774c1.html)</br>
     4.3 [链式队列](https://alex-mcavoy.github.io/notes/data-structure/f6839f18.html)</br>
-5. [数组与矩阵的压缩存储](https://alex-mcavoy.github.io/notes/data-structure/233df825.html)
-6. [字符串定义与存储结构](https://alex-mcavoy.github.io/notes/data-structure/cd4644a3.html)
-    6.1 [字符串模式匹配](https://alex-mcavoy.github.io/notes/data-structure/761134bf.html)
+5. [数组与矩阵的压缩存储](https://alex-mcavoy.github.io/notes/data-structure/233df825.html)</br>
+6. [字符串定义与存储结构](https://alex-mcavoy.github.io/notes/data-structure/cd4644a3.html)</br>
+    6.1 [字符串模式匹配](https://alex-mcavoy.github.io/notes/data-structure/761134bf.html)</br>
 7. 
