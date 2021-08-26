@@ -21,4 +21,7 @@
 5. [数组与矩阵的压缩存储](https://alex-mcavoy.github.io/notes/data-structure/233df825.html)</br>
 6. [字符串定义与存储结构](https://alex-mcavoy.github.io/notes/data-structure/cd4644a3.html)</br>
     6.1 [字符串模式匹配](https://alex-mcavoy.github.io/notes/data-structure/761134bf.html)</br>
+    6.2 [BP 算法](https://alex-mcavoy.github.io/notes/data-structure/8ad51007.html)</br>
+    6.3 [MP 算法](https://alex-mcavoy.github.io/notes/data-structure/556cdfd6.html)</br>
+    6.4 [KMP 算法](https://alex-mcavoy.github.io/notes/data-structure/36b55f59.html)</br>
 7. 
